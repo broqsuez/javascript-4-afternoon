@@ -15,6 +15,11 @@
 
 // Code here
 
+function CarFactory(make, model) {
+  this.make = make;
+  this.model = model;
+}
+
 
 
 ////////// PROBLEM 2 //////////
@@ -32,7 +37,9 @@ function Employee(name, email, hireDate) {
   Assign the result of the invocation to a variable called bob.
 */
 
-// Code here
+var bob = new Employee('Bob', 'bob@gmail.com', '01-02-98');
+
+
 
 
 
@@ -41,9 +48,6 @@ function Employee(name, email, hireDate) {
 // Do not edit the code below.
 var prius = new Car('Toyota', 'Prius', 2011);
 var mustang = new Car('Ford', 'Mustang', 2013);
-prius.moveCar(); // Increments prius' move property by 10. Returns the new move property.
-mustang.moveCar(); // Increments mustang' move property by 10. Returns the new move property.
-// Do not edit the code above.
 
 /*
   Write a constructor function, including method definitions, which will make the above function invocations function properly.
@@ -54,5 +58,27 @@ mustang.moveCar(); // Increments mustang' move property by 10. Returns the new m
 */
 
 // Code here
+function Car(make, model, year) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+  this.move = 0;
+  this.moveCar = function () {
+    this.move+=10;
+    return this.move;
+  }
+}
+
+var prius = new Car('Toyota', 'Prius', 2011);
+var mustang = new Car('Ford', 'Mustang', 2013);
+
+console.log(prius);
+
+prius.moveCar(); //increments prius' move property by 10. Returns the new move property.
+mustang.moveCar(); //incr
+
+var getYear = function(){
+return this.year;
+};
 
 
